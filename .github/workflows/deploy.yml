@@ -1,4 +1,4 @@
-name: Deploy to AWS CLOUD EC2
+name: Deploy to AWS EC2
 
 on:
   push:
@@ -22,4 +22,4 @@ jobs:
 
       - name: Deploy Files
         run: |
-          rsync -avz ./ ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}:/usr/share/nginx/html/
+          rsync -avz ./ ec2-user@${{ secrets.EC2_HOST }}:/usr/share/nginx/html/
